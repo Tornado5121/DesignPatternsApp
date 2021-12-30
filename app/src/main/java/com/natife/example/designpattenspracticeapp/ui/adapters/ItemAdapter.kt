@@ -1,13 +1,12 @@
 package com.natife.example.designpattenspracticeapp.ui.adapters
 
-//class ItemAdapter(): TvSeries(val seriesNumber: Int) {
-//
-//
-//
-//}
-//
-//
-//
-//open class TvSeries(val seriesNumber: Int) {
-//
-//}
+import com.natife.example.designpattenspracticeapp.domens.NotItem
+
+class ItemAdapter: Itemable {
+
+    override fun putItem() {
+        val notItem = NotItem()
+        notItem.notItemMethod()
+    }
+
+}

@@ -11,6 +11,7 @@ import com.natife.example.designpattenspracticeapp.domens.decoder.Plane
 import com.natife.example.designpattenspracticeapp.domens.decoder.Ship
 import com.natife.example.designpattenspracticeapp.domens.decoder.Transport
 import com.natife.example.designpattenspracticeapp.factories.ItemFactory
+import com.natife.example.designpattenspracticeapp.ui.adapters.ItemAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,11 +48,14 @@ class MainActivity : AppCompatActivity() {
         d("bookInfo", book.bookTitle + " by " + book.bookAuthor)
 
         //Adapter
-
+        val itemAdapter = ItemAdapter()
+        itemAdapter.putItem()
 
         //Decorator
         transportFactory.fly()
-
+        transportFactory.move()
+        transportFactory.turn()
+        transportFactory.stop()
     }
 
 }
