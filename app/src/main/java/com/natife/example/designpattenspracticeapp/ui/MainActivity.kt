@@ -11,7 +11,7 @@ import com.natife.example.designpattenspracticeapp.domens.decoder.Plane
 import com.natife.example.designpattenspracticeapp.domens.decoder.Ship
 import com.natife.example.designpattenspracticeapp.domens.decoder.Transport
 import com.natife.example.designpattenspracticeapp.factories.ItemFactory
-import com.natife.example.designpattenspracticeapp.ui.adapters.ItemAdapter
+import com.natife.example.designpattenspracticeapp.ui.adapters.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,8 +48,20 @@ class MainActivity : AppCompatActivity() {
         d("bookInfo", book.bookTitle + " by " + book.bookAuthor)
 
         //Adapter
-        val itemAdapter = ItemAdapter()
-        itemAdapter.putItem()
+        val hole = RoundHole(5.0)
+        val roundPeg = RoundPeg(5.0)
+        val bool = hole.isFit(roundPeg)
+        d("boolIsRoundPegFit", bool.toString()) //true
+
+        val squarePeg = SquarePeg(5.0)
+        val adapter = RoundHoleAdapter().convertToRadius(squarePeg)
+        val bool2 = hole.isFit(adapter)
+        d("boolIsRoundPegFit2", bool2.toString()) //true
+
+        val squarePeg2 = SquarePeg(10.0)
+        val adapter2 = RoundHoleAdapter().convertToRadius(squarePeg2)
+        val bool3 = hole.isFit(adapter2)
+        d("boolIsRoundPegFit3", bool3.toString()) //false
 
         //Decorator
         transportFactory.fly()

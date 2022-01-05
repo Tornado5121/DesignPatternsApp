@@ -1,7 +1,3 @@
 package com.natife.example.designpattenspracticeapp.ui.adapters
 
-interface Itemable {
-
-    fun putItem()
-
-}
+data class RoundPeg(var radius: Double)
