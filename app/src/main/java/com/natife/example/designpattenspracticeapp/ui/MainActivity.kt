@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.natife.example.designpattenspracticeapp.R
 import com.natife.example.designpattenspracticeapp.domens.Book
 import com.natife.example.designpattenspracticeapp.domens.Item
+import com.natife.example.designpattenspracticeapp.domens.S
 import com.natife.example.designpattenspracticeapp.domens.decoder.Car
 import com.natife.example.designpattenspracticeapp.domens.decoder.Plane
 import com.natife.example.designpattenspracticeapp.domens.decoder.Ship
@@ -46,6 +47,9 @@ class MainActivity : AppCompatActivity() {
         //Singleton
         val book = Book
         d("bookInfo", book.bookTitle + " by " + book.bookAuthor)
+
+        val s = S.getInstance()
+        d("Singleton", s.name)
 
         //Adapter
         val hole = RoundHole(5.0)
